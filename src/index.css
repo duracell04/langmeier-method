@@ -2,87 +2,109 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Langmeier Dreieck-1×1 Design System
+   Swiss minimal, calm, academic, trustworthy
+   All colors in HSL
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Warm off-white background */
+    --background: 40 20% 98%;
+    --foreground: 220 25% 12%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Cards slightly warmer */
+    --card: 40 15% 99%;
+    --card-foreground: 220 25% 12%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 40 15% 99%;
+    --popover-foreground: 220 25% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Calm teal accent - trustworthy, academic */
+    --primary: 185 45% 35%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Soft warm gray for secondary */
+    --secondary: 40 10% 94%;
+    --secondary-foreground: 220 20% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted tones */
+    --muted: 40 8% 92%;
+    --muted-foreground: 220 10% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Subtle accent */
+    --accent: 185 30% 92%;
+    --accent-foreground: 185 45% 25%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Subtle borders */
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 185 45% 35%;
 
     --radius: 0.5rem;
 
+    /* Custom tokens */
+    --surface-elevated: 0 0% 100%;
+    --text-secondary: 220 10% 50%;
+    --text-tertiary: 220 8% 65%;
+    --divider: 220 15% 92%;
+    
+    /* Triangle accent colors */
+    --triangle-product: 185 45% 35%;
+    --triangle-factor: 220 20% 25%;
+    --triangle-missing: 40 60% 55%;
+
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 25% 8%;
+    --foreground: 40 10% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 22% 10%;
+    --card-foreground: 40 10% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 22% 10%;
+    --popover-foreground: 40 10% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 185 50% 45%;
+    --primary-foreground: 220 25% 8%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 40 10% 90%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 18% 15%;
+    --muted-foreground: 220 10% 60%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 185 30% 20%;
+    --accent-foreground: 185 50% 70%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 20% 20%;
+    --input: 220 20% 20%;
+    --ring: 185 50% 45%;
+
+    --surface-elevated: 220 22% 12%;
+    --text-secondary: 220 10% 60%;
+    --text-tertiary: 220 8% 45%;
+    --divider: 220 20% 18%;
+
+    --triangle-product: 185 50% 50%;
+    --triangle-factor: 40 10% 85%;
+    --triangle-missing: 40 70% 60%;
+
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +122,113 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Typography scale - Swiss minimal */
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-medium tracking-tight;
+  }
+
+  h4 {
+    @apply text-lg font-medium;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  /* Subtle card with refined shadow */
+  .card-elevated {
+    @apply bg-card rounded-lg border border-border/50 shadow-sm;
+    box-shadow: 
+      0 1px 2px 0 hsl(var(--foreground) / 0.03),
+      0 4px 8px -2px hsl(var(--foreground) / 0.04);
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Container with max-width */
+  .container-narrow {
+    @apply max-w-5xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Focus states - accessible */
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Subtle transition - respects reduced motion */
+  .transition-subtle {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .transition-subtle {
+      @apply transition-none;
+    }
+  }
+
+  /* Triangle visual component */
+  .triangle-container {
+    @apply relative;
+  }
+
+  .triangle-node {
+    @apply w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center font-semibold text-lg md:text-xl transition-subtle;
+  }
+
+  .triangle-node-product {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  .triangle-node-factor {
+    @apply bg-secondary text-secondary-foreground border border-border;
+  }
+
+  .triangle-node-missing {
+    @apply bg-accent border-2 border-dashed border-primary/40 text-accent-foreground;
+  }
+
+  /* Grid cell for structure lens */
+  .grid-cell {
+    @apply w-6 h-6 md:w-7 md:h-7 rounded-sm flex items-center justify-center text-xs font-medium transition-subtle;
+  }
+
+  .grid-cell-active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .grid-cell-inactive {
+    @apply bg-muted/50 text-muted-foreground/50;
+  }
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
