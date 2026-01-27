@@ -41,7 +41,11 @@ export function Navbar() {
           >
             Login
           </a>
-          <Button variant="hero" size="default">
+          <Button 
+            variant="hero" 
+            size="default"
+            onClick={() => document.getElementById('preise')?.scrollIntoView({ behavior: 'smooth' })}
+          >
             Jetzt starten
           </Button>
         </div>
@@ -79,7 +83,15 @@ export function Navbar() {
               Login
             </a>
             <div className="pt-2">
-              <Button variant="hero" size="lg" className="w-full">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="w-full"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  document.getElementById('preise')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
                 Jetzt starten
               </Button>
             </div>
