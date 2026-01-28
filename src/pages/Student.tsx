@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle2, XCircle } from "lucide-react";
+import { ArrowLeft, CheckCircle2, XCircle, HelpCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TriangleVisual } from "@/components/TriangleVisual";
 import { NumpadInput } from "@/components/NumpadInput";
+import { StructureLensGrid } from "@/components/StructureLensGrid";
 import { cn } from "@/lib/utils";
 
 const demoProblems = [
@@ -107,20 +108,40 @@ const Student = () => {
             {/* Feedback */}
             {feedback && (
               <div className={cn(
-                "flex items-center justify-center gap-2 py-3 rounded-lg mb-4",
+                "flex flex-col items-center gap-3 py-3 rounded-lg mb-4",
                 feedback === "correct" ? "bg-primary/10 text-primary" : "bg-destructive/10 text-destructive"
               )}>
                 {feedback === "correct" ? (
-                  <>
+                  <div className="flex items-center gap-2">
                     <CheckCircle2 className="h-5 w-5" />
                     <span className="font-medium">Richtig! {problem.answer}</span>
-                  </>
+                  </div>
                 ) : (
-                  <>
+                  <div className="flex items-center gap-2">
                     <XCircle className="h-5 w-5" />
-                    <span className="font-medium">Nicht ganz. Versuche es nochmal!</span>
-                  </>
+                    <span className="font-medium">Nicht ganz. Schau dir die Hilfe an!</span>
+                  </div>
                 )}
+              </div>
+            )}
+
+            {/* Structure Grid Helper on wrong answer */}
+            {feedback === "wrong" && (
+              <div className="card-elevated p-4 mb-4 bg-muted/30">
+                <div className="flex items-center justify-center gap-2 mb-3">
+                  <HelpCircle className="h-4 w-4 text-muted-foreground" />
+                  <span className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
+                    Strukturlinse
+                  </span>
+                </div>
+                <div className="flex justify-center">
+                  <StructureLensGrid
+                    product={problem.product}
+                    factorA={problem.factorA}
+                    factorB={problem.factorB}
+                    answer={problem.answer}
+                  />
+                </div>
               </div>
             )}
 
