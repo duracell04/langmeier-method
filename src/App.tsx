@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import Teacher from "./pages/Teacher";
 import Student from "./pages/Student";
 import NotFound from "./pages/NotFound";
+import LoadingBar from "./components/LoadingBar";
 
 const queryClient = new QueryClient();
 
@@ -16,6 +17,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <LoadingBar />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/teacher" element={<Teacher />} />
